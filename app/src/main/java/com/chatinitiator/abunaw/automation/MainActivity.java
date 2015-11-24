@@ -214,20 +214,21 @@ public class MainActivity extends AppCompatActivity{
 
         //frequency = new String[] { "Never", "Everyday","Every week"};
 
-		flag = new int[] { R.drawable.pendimg,R.drawable.active};
+		//flag = new int[] { R.drawable.pendimg,R.drawable.active};
 
 
         //add events to custom list
         //update db with an id for each event
         for (int i = 0; i < title.size(); i++)
         {
-            if(isActive.get(i).equalsIgnoreCase("false") || isActive.get(i).equalsIgnoreCase("null"))
+            /*if(isActive.get(i).equalsIgnoreCase("false") || isActive.get(i).equalsIgnoreCase("null"))
             {
                 flagControl = 0;
             } else {
                 flagControl = 1;
-            }
-            Event listOfEvents = new Event(title.get(i), time.get(i), frequency.get(i),flag[flagControl],eventIds.get(i),isActive.get(i));
+            }*/
+
+            Event listOfEvents = new Event(title.get(i), time.get(i), frequency.get(i),eventIds.get(i),isActive.get(i));
             eventlist.add(listOfEvents);
 
             //Update db here to ad an id for each event
@@ -309,7 +310,8 @@ public class MainActivity extends AppCompatActivity{
                                 cancelService(Integer.parseInt(pendingIntentIds.get(i)));
                                 //Delete data from database
                                 deleteFromDB(selecteditem.getId());
-
+                                /*****/
+                                refresh();
                                 //refresh data in list adapter
                                 listviewadapter.clear();
                                 listviewadapter.notifyDataSetChanged();
@@ -371,7 +373,6 @@ public class MainActivity extends AppCompatActivity{
     protected void onResume() {
         super.onResume();
         //reschedule all events once activity comes to views
-        reschedule();
     }
 
     @Override
@@ -588,18 +589,18 @@ public class MainActivity extends AppCompatActivity{
             }
         }
 
-        flag = new int[]{R.drawable.pendimg, R.drawable.active};
+        //flag = new int[]{R.drawable.pendimg, R.drawable.active};
 
 
         //add events to custom list
         //update db with an id for each event
         for (int i = 0; i < title.size(); i++) {
-            if (isActive.get(i).equalsIgnoreCase("false") || isActive.get(i).equalsIgnoreCase("null")) {
+            /*if (isActive.get(i).equalsIgnoreCase("false") || isActive.get(i).equalsIgnoreCase("null")) {
                 flagControl = 0;
             } else {
                 flagControl = 1;
-            }
-            Event listOfEvents = new Event(title.get(i), time.get(i), frequency.get(i), flag[flagControl], eventIds.get(i),isActive.get(i));
+            }*/
+            Event listOfEvents = new Event(title.get(i), time.get(i), frequency.get(i),eventIds.get(i),isActive.get(i));
             eventlist.add(listOfEvents);
 
             //Update db here to ad an id for each event
@@ -620,67 +621,5 @@ public class MainActivity extends AppCompatActivity{
         // Binds the Adapter to the ListView
         list.setAdapter(listviewadapter);
     }
-
-    public void reschedule(){
-        //A db event
-        dbEvent = new DBEvent();
-        String sendText = "false";
-
-        Cursor c = db.rawQuery("SELECT * FROM event ",null);
-        if(c.getCount()>0)
-        {
-            while(c.moveToNext())
-            {
-
-                //Get and create  an event
-                dbEvent.setMsg(c.getString(1));
-                dbEvent.setPhn_num(c.getString(2));
-                dbEvent.setFrq(c.getString(5));
-                dbEvent.setPend_int(c.getString(6));
-
-
-                //get isActive field and if it is active assign then don't send text string = true
-                String time = "" + c.getString(14);
-                String tempIsActive = c.getString(15);
-                String tempId = c.getString(17);
-
-
-                Log.i("Is active string", tempIsActive);
-
-                Toast.makeText(this, "On reschedule is active: " + tempIsActive,
-                Toast.LENGTH_LONG).show();
-
-
-                if(tempIsActive.equalsIgnoreCase("true")) {
-                    //should always equal false since i am
-                    //just making sure every event is rescheduled
-                    sendText = "false";
-                }
-
-                Log.i("On boot send text: ", sendText);
-
-                Log.i("inside get event method", "inside get event");
-
-
-                //set up chat
-                setChat(dbEvent.getMsg(), dbEvent.getPhn_num(), time, sendText,tempId);
-            }
-        }
-    }
-
-    //method that sets up chat
-    public void setChat(String msg,String phn,String time, String sendTxt,String eventId)
-    {
-        Intent myIntent = new Intent(MainActivity.this,MyReceiver.class);
-        myIntent.putExtra("id", eventId);
-        myIntent.putExtra("time",time);
-        myIntent.putExtra("send text", sendTxt);
-        myIntent.putExtra("pendIntentId", dbEvent.getPend_int());
-        myIntent.putExtra("frequency", dbEvent.getFrq());
-        myIntent.setAction("schedule");
-        sendBroadcast(myIntent);
-
-    }
-
 
 }

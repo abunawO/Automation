@@ -312,10 +312,10 @@ public class CreateEventActivity extends AppCompatActivity implements
                     }
 
                     phoneTxt.setText(phoneNumber);
-                    if(!givenName.equalsIgnoreCase(""))
-                    {
+                   // if(givenName.equalsIgnoreCase(""))
+                   // {
                         txtname.setText(givenName);
-                    }
+                   // }
 
                 } finally {
                     if (cursor != null) {

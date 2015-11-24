@@ -9,11 +9,11 @@ public class Event {
 	private String isActive;
 
 	public Event(String title, String time,
-				 String frequency,int flag,String id,String isActive) {
+				 String frequency,String id,String isActive) {
 		this.title = title;
 		this.time = time;
 		this.frequency = frequency;
-		this.flag = flag;
+		//this.flag = flag;
 		this.evntId = id;
 		this.isActive = isActive;
 	}

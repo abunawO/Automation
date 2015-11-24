@@ -34,9 +34,6 @@
         </activity>
 
         <receiver android:name=".MyReceiver" >
-            <intent-filter>
-                <action android:name="schedule" />
-            </intent-filter>
         </receiver>
 
         <!-- Will not be called unless the application explicitly enables it -->

@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="?android:attr/activatedBackgroundIndicator" >
+    android:background="?android:attr/activatedBackgroundIndicator"
+    >
 
     <TextView
         android:id="@+id/titlelabel"
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:typeface="serif"
-        android:textColor="#000000"
+        android:textColor="#FFFF"
         android:layout_toRightOf="@+id/titlelabel" />
 
     <TextView
@@ -30,9 +31,9 @@
         android:layout_below="@+id/title"
         android:typeface="sans"
         android:textStyle="bold"
-        android:textColor="#696969"
+        android:textColor="#000000"
         android:textSize="20dp"
-        android:text="@string/timelabel" />
+        />
 
     <TextView
         android:id="@+id/time"
@@ -41,7 +42,7 @@
         android:layout_below="@+id/title"
         android:textSize="20dp"
         android:typeface="serif"
-        android:textColor="#000000"
+        android:textColor="#FFFF"
         android:layout_toRightOf="@+id/timelabel" />
 
     <TextView
@@ -52,7 +53,7 @@
         android:textSize="20dp"
         android:typeface="sans"
         android:textStyle="bold"
-        android:textColor="#6B8E23"
+        android:textColor="#000000"
         android:text="@string/frequencylabel" />
 
     <TextView
@@ -62,15 +63,15 @@
         android:layout_below="@+id/time"
         android:textSize="20dp"
         android:typeface="serif"
-        android:textColor="#000000"
+        android:textColor="#FFFF"
         android:layout_toRightOf="@+id/frequencylabel" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/flag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:padding="15dp" />
+        android:padding="15dp" />-->
 
 
 

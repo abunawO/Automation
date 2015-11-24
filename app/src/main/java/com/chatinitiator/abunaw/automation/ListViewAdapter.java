@@ -1,6 +1,7 @@
 package com.chatinitiator.abunaw.automation;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,7 @@ public class ListViewAdapter extends ArrayAdapter<Event> {
 	private class ViewHolder {
 		TextView title;
 		TextView time;
+		TextView str;
 		TextView frequency;
 		ImageView flag;
 	}
@@ -52,7 +54,8 @@ public class ListViewAdapter extends ArrayAdapter<Event> {
 			holder.time = (TextView) view.findViewById(R.id.time);
 			holder.frequency = (TextView) view.findViewById(R.id.frequency);
 			// Locate the ImageView in listview_item.xml
-			holder.flag = (ImageView) view.findViewById(R.id.flag);
+			//holder.flag = (ImageView) view.findViewById(R.id.flag);
+			holder.str = (TextView)view.findViewById(R.id.timelabel);
 			view.setTag(holder);
 		} else {
 			holder = (ViewHolder) view.getTag();
@@ -63,15 +66,19 @@ public class ListViewAdapter extends ArrayAdapter<Event> {
 		holder.frequency.setText(eventlist.get(position)
 				.getFrequency());
 		// Capture position and set to the ImageView
-		holder.flag.setImageResource(eventlist.get(position)
-				.getFlag());
+		//holder.flag.setImageResource(eventlist.get(position)
+				//.getFlag());
 
-		/*if(eventlist.get(position).getIsActive().equalsIgnoreCase("true"))
+		if(eventlist.get(position).getIsActive().equalsIgnoreCase("true"))
 		{
-				view.setBackgroundColor(Color.TRANSPARENT);
+			holder.str.setText("Started: ");
+			holder.str.setBackgroundColor(Color.rgb(102,204,0));
+				//view.setBackgroundColor(Color.TRANSPARENT);
 		}else{
-			   view.setBackgroundColor(Color.TRANSPARENT);
-		}*/
+			holder.str.setText("Starts: ");
+			holder.str.setBackgroundColor(Color.rgb(255,255,51));
+			   //view.setBackgroundColor(Color.TRANSPARENT);
+		}
 
 		return view;
 	}
