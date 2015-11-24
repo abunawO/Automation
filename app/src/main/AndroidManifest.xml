@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.chatinitiator.abunaw.automation" >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- Permission to start Alarm on device reboot -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ci_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="Chat Initiator"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CreateEventActivity"
+            android:label="Create Event"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chatinitiator.abunaw.automation.MainActivity" />
+        </activity>
+
+        <receiver android:name=".MyReceiver" >
+            <intent-filter>
+                <action android:name="schedule" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Will not be called unless the application explicitly enables it -->
+        <receiver android:name=".DeviceBootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".EditMessageActivity"
+            android:label="@string/title_activity_edit_message"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chatinitiator.abunaw.automation.MainActivity" />
+        </activity>
+        <activity
+            android:name=".HowToActivity"
+            android:label="@string/title_activity_how_to"
+            android:parentActivityName=".CreateEventActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chatinitiator.abunaw.automation.CreateEventActivity" />
+        </activity>
+    </application>
+
+</manifest>

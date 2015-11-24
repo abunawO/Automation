@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?android:attr/activatedBackgroundIndicator" >
+
+    <TextView
+        android:id="@+id/titlelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="@string/titlelabel" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textColor="#000000"
+        android:layout_toRightOf="@+id/titlelabel" />
+
+    <TextView
+        android:id="@+id/timelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:textSize="20dp"
+        android:text="@string/timelabel" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textColor="#000000"
+        android:layout_toRightOf="@+id/timelabel" />
+
+    <TextView
+        android:id="@+id/frequencylabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timelabel"
+        android:textSize="20dp"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:textColor="#6B8E23"
+        android:text="@string/frequencylabel" />
+
+    <TextView
+        android:id="@+id/frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textColor="#000000"
+        android:layout_toRightOf="@+id/frequencylabel" />
+
+    <ImageView
+        android:id="@+id/flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="15dp" />
+
+
+
+</RelativeLayout><!-- From: file:/Users/Abunaw/AndroidStudioProjects/Automation/app/src/main/res/layout/listview_item.xml -->
