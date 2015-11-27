@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Chat Initiator</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="titlelabel">&quot;Title: &quot;</string>
+    <string name="timelabel">&quot;Starts: &quot;</string>
+    <string name="frequencylabel">&quot;Repeat: &quot;</string>
+    <string name="delete">Delete</string>
+    <string name="title_activity_create_event">CreateEventActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="frequency_arrays">
+        <item>Never Repeat</item>
+        <item>Repeat Everyday</item>
+        <item>Repeat Every Week</item>
+        <item>Repeat Every 2 Week</item>
+        <item>Repeat Every Month</item>
+        <item>Repeat Every Year</item>
+        <item>Repeat Every 5 minutes</item>
+
+    </string-array>
+    <string name="title_activity_edit_message">Edit Message</string>
+    <string name="title_activity_single_item_view">SingleItemViewActivity</string>
+    <string name="title_activity_how_to">How to use</string>
+
+</resources>

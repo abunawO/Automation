@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?android:attr/activatedBackgroundIndicator"
+    >
+
+    <TextView
+        android:id="@+id/titlelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:typeface="sans"
+        android:textColor="#000000"
+        android:shadowColor="#A9A9A9"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="4"
+        android:text="@string/titlelabel" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textColor="#606060"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:layout_toRightOf="@+id/titlelabel" />
+
+    <TextView
+        android:id="@+id/timelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:typeface="sans"
+        android:textColor="#000000"
+        android:shadowColor="#A9A9A9"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="4"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="26.8dp"
+        android:layout_below="@+id/title"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textColor="#606060"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:layout_toRightOf="@+id/timelabel" />
+
+    <TextView
+        android:id="@+id/frequencylabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timelabel"
+        android:textSize="20dp"
+        android:typeface="sans"
+        android:textColor="#000000"
+        android:shadowColor="#A9A9A9"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="4"
+        android:text="@string/frequencylabel" />
+
+    <TextView
+        android:id="@+id/frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textColor="#606060"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:layout_toRightOf="@+id/frequencylabel" />
+
+    <!--<ImageView
+        android:id="@+id/flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="15dp" />-->
+
+
+
+</RelativeLayout>
